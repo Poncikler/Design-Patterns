@@ -131,7 +131,7 @@ Bu iki class Enemy class’ını miras alıyor ve onun özelliklerinden faydalan
 ```csharp
 public enum Type
     {
-        Meele,
+        Melee,
         Range
     }
 
@@ -143,7 +143,7 @@ public enum Type
 
             switch (type)
             {
-                case Type.Meele:
+                case Type.Melee:
                     enemy = new Skeleton(health, name, damage, id);
                     break;
                 case Type.Range:
@@ -171,7 +171,7 @@ Son olarak main içerisine bakalım.
 ```csharp
 static void Main(string[] args)
         {
-            Enemy pitircik = Spawner.SpawnEnemy(70, "Iskelet Abi", 30, 1, Type.Meele);
+            Enemy pitircik = Spawner.SpawnEnemy(70, "Iskelet Abi", 30, 1, Type.Melee);
             pitircik.Shout();
 
             Enemy imam = Spawner.SpawnEnemy(100, "Imam Abi", 50, 2, Type.Range);
@@ -189,7 +189,7 @@ static void Main(string[] args)
 ![alt text](https://github.com/UlascanKilic/Design-Patterns/blob/main/Factory/ss1.png)
 
 ```csharp
-Enemy pitircik = Spawner.SpawnEnemy(70, "Iskelet Abi", 30, 1, Type.Meele);
+Enemy pitircik = Spawner.SpawnEnemy(70, "Iskelet Abi", 30, 1, Type.Melee);
 ```
 Burada yapılan işlem adım adım şu şekildedir:
 1) Spawner class’ındaki SpawnEnemy methoduna git ve verdiğim parametreleri gönder.
